@@ -466,11 +466,7 @@ impl Config {
 
     fn get_weekstart(data: &str) -> bool {
         let data = Self::get_config("weekstart", data).unwrap_or_default();
-        if data.eq_ignore_ascii_case("Monday") {
-            return true;
-        } else {
-            return false;
-        }
+        return data.eq_ignore_ascii_case("Monday");
     }
 
     fn get_rule_precedence_color(data: &str) -> Vec<String> {
