@@ -1,4 +1,3 @@
-#![allow(clippy::eval_order_dependence)]
 use anyhow::{Context, Result};
 use std::collections::HashMap;
 use std::error::Error;
@@ -466,7 +465,7 @@ impl Config {
 
     fn get_weekstart(data: &str) -> bool {
         let data = Self::get_config("weekstart", data).unwrap_or_default();
-        return data.eq_ignore_ascii_case("Monday");
+        data.eq_ignore_ascii_case("Monday")
     }
 
     fn get_rule_precedence_color(data: &str) -> Vec<String> {
